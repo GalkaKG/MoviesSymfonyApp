@@ -27,7 +27,7 @@ class Movie
     #[ORM\Column(length: 255)]
     private ?string $imagePath = null;
 
-    #[ORM\ManyToMany(targetEntity: Actor::class, inversedBy: 'no')]
+    #[ORM\ManyToMany(targetEntity: Actor::class, inversedBy: 'movies')]
     private Collection $actors;
 
     public function __construct()
