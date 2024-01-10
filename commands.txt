@@ -2,8 +2,12 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
 iex "& {$(irm get.scoop.sh)} -RunAsAdmin"
 scoop install symfony-cli
+php -S 127.0.0.1:8000 -t public
 symfony check:requirements
 php bin/console --version
 symfony server:start -d
 symfony server:stop
 symfony console make:controller MoviesController
+composer require symfony/orm-pack
+composer require --dev symfony/maker-bundle
+php bin/console doctrine:database:create
