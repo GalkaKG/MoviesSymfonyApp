@@ -5,6 +5,7 @@ scoop install symfony-cli
 php -S 127.0.0.1:8000 -t public
 symfony check:requirements
 php bin/console --version
+php bin/console cache:clear
 symfony server:start -d
 symfony server:stop
 symfony console make:controller MoviesController
