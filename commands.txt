@@ -18,3 +18,7 @@ npx tailwindcss -i ./assets/styles/app.css -o ./public/build/app.css --watch
 composer require symfony/form
  php bin/console make:form MovieFormType Movie
 composer require symfony/mime
+composer require symfony/validator doctrine/annotations
+composer require symfony/security-bundle  
+php bin/console make:user User
+php bin/console make:registration-form    
