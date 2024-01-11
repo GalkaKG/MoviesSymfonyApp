@@ -1,7 +1,6 @@
-body {
-    background-color: skyblue;
-}
+@tailwind base;
 
-h1 {
-    font-size: 80px;
-}
+@tailwind components;
+
+@tailwind utilities;
+

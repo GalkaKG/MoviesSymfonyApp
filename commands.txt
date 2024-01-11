@@ -13,3 +13,4 @@ composer require --dev symfony/maker-bundle
 php bin/console doctrine:database:create
 composer require --dev doctrine/doctrine-fixtures-bundle
 php bin/console doctrine:fixtures:load 
+npx tailwindcss -i ./assets/styles/app.css -o ./public/build/app.css --watch
