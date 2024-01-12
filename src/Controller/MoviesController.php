@@ -67,6 +67,7 @@ class MoviesController extends AbstractController
     #[Route('/movies/create', name: 'create_movie')]
     public function create(Request $request): Response
     {
+       
         $movie = new Movie;
         $form = $this->createForm(MovieFormType::class, $movie);
 
@@ -99,14 +100,15 @@ class MoviesController extends AbstractController
             $this->em->flush();
 
             return $this->redirectToRoute('movies');
-        } else {
-            $errors = [];
-            foreach ($form->getErrors(true, true) as $error) {
-                $errors[] = $error->getMessage();
-            }
-            dump($errors);
+        // } else {
+        //     $errors = [];
+        //     foreach ($form->getErrors(true, true) as $error) {
+        //         $errors[] = $error->getMessage();
+        //     }
+        //     dump($errors);
         }
 
+       
         return $this->render('movies/create.html.twig', [
             'form' => $form->createView()
         ]);
